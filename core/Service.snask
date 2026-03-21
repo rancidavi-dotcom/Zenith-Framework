@@ -1,0 +1,23 @@
+// Zenith Service Base Class - v0.1.0
+
+class Service
+    mut name = "BaseService";
+    mut running = false;
+
+    fun boot()
+        // Override me in your service
+        print("[SERVICE] " + self.name + " is booting...");
+        print("\n");
+
+    fun start()
+        self.running = true;
+        print("[SERVICE] " + self.name + " started.");
+        print("\n");
+
+    fun stop()
+        self.running = false;
+        print("[SERVICE] " + self.name + " stopped.");
+        print("\n");
+
+    fun is_running()
+        return self.running;

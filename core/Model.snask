@@ -1,0 +1,29 @@
+// Zenith Model Base Class (ORM-lite)
+import "../core/Database.snask";
+
+class Model
+    mut table = "";
+    mut primary_key = "id";
+    mut db = nil;
+
+    fun get_db()
+        if self.db
+            return self.db;
+        return db;
+
+    fun all()
+        let sql = "SELECT * FROM " + self.table;
+        return self.get_db().query(sql);
+
+    fun find(id)
+        let sql = "SELECT * FROM " + self.table + " WHERE " + self.primary_key + " = " + id;
+        let results = self.get_db().query(sql);
+        if len(results) > 0
+            return results[0];
+        return nil;
+
+    fun delete(id)
+        let sql = "DELETE FROM " + self.table + " WHERE " + self.primary_key + " = " + id;
+        return self.get_db().exec(sql);
+
+    // Save and other methods will be added later

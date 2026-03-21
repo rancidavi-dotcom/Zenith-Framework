@@ -1,0 +1,8 @@
+// Zenith Controller Base Class
+
+class Controller
+    fun success(data)
+        return { "json": data, "status": 200 };
+
+    fun error(msg, status)
+        return { "json": { "error": msg }, "status": status };

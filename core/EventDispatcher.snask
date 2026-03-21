@@ -1,0 +1,24 @@
+// Zenith Event Dispatcher - v0.1.0
+
+class EventDispatcher
+    mut listeners = {};
+
+    fun listen(event, handler_name)
+        if not json_has(self.listeners, event)
+            self.listeners[event] = {};
+        
+        // No Snask, arrays podem ser manipulados via helpers
+        // por agora, simulamos uma adição simples
+        let queue = self.listeners[event];
+        print("[EVENT] Listening to " + event + " with " + handler_name);
+        print("\n");
+
+    fun dispatch(event, data)
+        print("[EVENT] Dispatching " + event);
+        print("\n");
+        if json_has(self.listeners, event)
+            let handlers = self.listeners[event];
+            // Para cada handler, chamar via dlsym ou reflexao (se disponivel)
+            // No momento, Zenith usara um mecanismo simplificado similar ao roteador blaze
+            print("[EVENT] Data: " + data);
+            print("\n");

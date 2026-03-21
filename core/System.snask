@@ -1,0 +1,36 @@
+// Zenith System Utility - v0.1.0
+// Proporciona acesso unificado e elegante ao Sistema Operacional e Desktop
+
+import "os";
+import "sfs";
+import "gui";
+
+class System
+    fun platform()
+        return os::platform();
+
+    fun arch()
+        return os::arch();
+
+    fun cwd()
+        return os::cwd();
+
+    fun get_env(key)
+        return os::getenv(key);
+
+    fun set_env(key, value)
+        return os::setenv(key, value);
+
+    // Notificacoes e Dialogos de Sistema
+    fun notify(title, message)
+        print("[NOTIFY] " + title + ": " + message);
+        print("\n");
+        // Se o GUI estiver disponivel, mostramos o dialogo
+        gui::msg_info(title, message);
+
+    fun error(title, message)
+        gui::msg_error(title, message);
+
+    // Helpers de Desktop
+    fun exit()
+        gui::quit();

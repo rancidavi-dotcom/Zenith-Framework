@@ -1,0 +1,12 @@
+// Zenith HTTP Server Wrapper
+
+class HttpServer
+    mut port = 8000;
+    mut routes = {};
+
+    fun route(path, handler_name)
+        self.routes[path] = { "handler": handler_name };
+
+    fun listen()
+        print("Zenith Server is running...");
+        blaze_run(self.port, self.routes);

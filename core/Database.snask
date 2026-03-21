@@ -1,0 +1,36 @@
+// Zenith Database Connection Wrapper
+
+class Database
+    mut handle = nil;
+    mut connected = false;
+
+    fun connect(path)
+        if self.connected
+            return true;
+        
+        self.handle = sqlite_open(path);
+        // Usar is_nil para verificação robusta
+        if not is_nil(self.handle)
+            self.connected = true;
+            print("Database connected to: " + path);
+            return true;
+        
+        print("Failed to connect to database: " + path);
+        return false;
+
+    fun query(sql)
+        if not self.connected
+            return [];
+        return sqlite_query(self.handle, sql);
+
+    fun exec(sql)
+        if not self.connected
+            return false;
+        return sqlite_exec(self.handle, sql);
+
+    fun close()
+        if self.connected
+            sqlite_close(self.handle);
+            self.connected = false;
+
+let db = Database();
