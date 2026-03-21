@@ -1,5 +1,5 @@
 // Zenith Model Base Class (ORM-lite)
-import "../core/Database.snask";
+import "zenith/core/Database.snask";
 
 class Model
     mut table = "";
