@@ -1,5 +1,5 @@
-import "../core/HttpServer.snask";
-import "../core/Database.snask";
+import "zenith/core/HttpServer.snask";
+import "zenith/core/Database.snask";
 import "HomeController.snask";
 
 // Database Setup (Using Zenith Core Singleton)
