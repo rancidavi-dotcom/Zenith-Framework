@@ -1,5 +1,0 @@
-target/
-*.o
-*.lock
-.DS_Store
-snask_vault/

@@ -1,4 +1,4 @@
-import "zenith/core/Model.snask";
+import "../core/Model.snask";
 
 class User extends Model
     mut table = "users";

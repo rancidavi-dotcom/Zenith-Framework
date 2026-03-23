@@ -1,4 +1,4 @@
-import "zenith/core/Controller.snask";
+import "../core/Controller.snask";
 import "User.snask";
 
 class HomeController extends Controller

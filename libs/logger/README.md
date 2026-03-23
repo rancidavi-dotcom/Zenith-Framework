@@ -1,44 +1,44 @@
 # logger — Zenith Library
 
-Biblioteca de logging com níveis e timestamp para Snask.
+Logging library with levels and timestamps for Snask.
 
-## Instalação
+## Installation
 
 ```bash
-# O arquivo logger.snask já está em ~/.snask/packages/
+# The logger.snask file is already in ~/.snask/packages/
 ```
 
-## Uso
+## Usage
 
 ```snask
 import "logger";
 
-logger::info("Servidor iniciado na porta 8080");
-logger::warn("Conexao com banco de dados lenta");
-logger::error("Falha critica no modulo X");
-logger::debug("Valor de retorno: 42");
+logger::info("Server started on port 8080");
+logger::warn("Slow database connection");
+logger::error("Critical failure in module X");
+logger::debug("Return value: 42");
 ```
 
-## Saída
+## Output
 
 ```
-[INFO]  2026-03-21 12:54 | Servidor iniciado na porta 8080
-[WARN]  2026-03-21 12:54 | Conexao com banco de dados lenta
-[ERROR] 2026-03-21 12:54 | Falha critica no modulo X
-[DEBUG] 2026-03-21 12:54 | Valor de retorno: 42
+[INFO]  1742560461 | Server started on port 8080
+[WARN]  1742560461 | Slow database connection
+[ERROR] 1742560461 | Critical failure in module X
+[DEBUG] 1742560461 | Return value: 42
 ```
 
-## Funções
+## Functions
 
-| Função | Descrição |
+| Function | Description |
 |---|---|
-| `logger::info(msg)` | Log de informação (verde em terminais que suportam) |
-| `logger::warn(msg)` | Log de aviso |
-| `logger::error(msg)` | Log de erro |
-| `logger::debug(msg)` | Log de debug |
-| `logger::raw(level, msg)` | Log com nível personalizado |
+| `logger::info(msg)` | Info log (green in supported terminals) |
+| `logger::warn(msg)` | Warning log |
+| `logger::error(msg)` | Error log |
+| `logger::debug(msg)` | Debug log |
+| `logger::raw(level, msg)` | Log with custom level |
 
-## Observações (Snask pre-alpha)
-- Timestamp usa `time()` em segundos Unix
-- Formatação humana é aproximada (sem biblioteca de data real ainda)
-- Compatível com Zenith Framework e apps standalone
+## Observations (Snask pre-alpha)
+- Timestamp uses `time()` in Unix seconds.
+- Human-readable formatting is approximate.
+- Compatible with Zenith Framework and standalone apps.
